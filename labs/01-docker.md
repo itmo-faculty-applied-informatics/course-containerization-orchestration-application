@@ -78,7 +78,7 @@ docker system df --format "table {{.Type}}\t{{.TotalCount}}\t{{.Active}}\t{{.Siz
 ```bash
 echo "Student: $(whoami)@$(hostname)" && \
 echo "Date: $(date '+%Y-%m-%d %H:%M:%S')" && \
-docker version --format "Docker {{.Server.Version}} on {{.Server.Os}}/{{.Server.Architecture}}"
+docker version --format "Docker {{.Server.Version}} on {{.Server.Os}}/$(docker info --format '{{.Architecture}}')"
 ```
 
 **(whoami)** - подстановка имени текущего пользователя (shell-подстановка).
